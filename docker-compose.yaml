@@ -4,6 +4,7 @@ services:
     image: postgres
     environment:
       POSTGRES_PASSWORD: "1234"
+      POSTGRES_DB: "banco_dados_facilit"
     ports:
      - "5432:5432"
     volumes:
