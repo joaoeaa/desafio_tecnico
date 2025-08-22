@@ -1,13 +1,26 @@
 services:
   db:
 
-    image: postgres
-    environment:
-      POSTGRES_PASSWORD: "1234"
-      POSTGRES_DB: "banco_dados_facilit"
-    ports:
-     - "5432:5432"
-    volumes:
-     - postgres_data:/var/lib/postgresql/data
+   image: postgres
+   container_name: desafio_facilit_db
+   environment:
+    POSTGRES_USER: postgres
+    POSTGRES_PASSWORD: "1234"
+    POSTGRES_DB: "banco_dados_facilit"
+   ports:
+    - "5432:5432"
+   volumes:
+    - postgres_data:/var/lib/postgresql/data
+  api:
+   build: .
+   container_name: desafio_facilit_api
+   ports:
+    - "8000:8000"
+   volumes:
+    - ./backend:/app/backend
+   env_file:
+    - .env
+   depends_on:
+    - db
 volumes:
  postgres_data:
