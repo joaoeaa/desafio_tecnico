@@ -21,7 +21,7 @@ def create_event(event: schemas.EventCreate, db: Session = Depends(get_db)):
     db_event = models.Event(**event.model_dump())
     db.add(db_event)
     db.commit()
-    db.refresh()
+    db.refresh(db_event)
     return db_event
 
 @app.get("/events/", response_model=List[schemas.Event])
