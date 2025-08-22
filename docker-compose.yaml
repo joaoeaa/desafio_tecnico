@@ -22,5 +22,19 @@ services:
     - .env
    depends_on:
     - db
+  n8n:
+   image: n8nio/n8n
+   container_name: desafio_facilit_n8n
+   ports:
+    - "5678:5678"
+   volumes:
+    - n8n_data:/home/node/.n8n
+   depends_on:
+    - api
+    - db
+   environment:
+    - GENERIC_TIMEZONE=America/Recife
+   
 volumes:
  postgres_data:
+ n8n_data:
