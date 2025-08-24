@@ -80,10 +80,10 @@ curl -Method POST -ContentType "application/json" -Body '{"pergunta": "Quais sã
 # Primeira pergunta
 curl -Method POST -ContentType "application/json" -Body '{"pergunta": "Quantos eventos de RH existem?", "sessionId": "teste"}' -Uri "http://localhost:5678/webhook-test/8d061515-3c4a-464e-bbb2-2349e6cea6bb"
 
+
 #Pergunta seguinte
 curl -Method POST -ContentType "application/json" -Body '{"pergunta": "e quais são eles?", "sessionId": "teste"}' -Uri "http://localhost:5678/webhook-test/8d061515-3c4a-464e-bbb2-2349e6cea6bb"
 ```
-![Output primeira pergunta](.assets/pergunta_um.jpg)
 ![Output segunda pergunta](.assets/pergunta_dois.jpg)
 ## Endpoints da API
 A API FastAPI expõe os seguintes endpoints em `http://localhost:8000`:
