@@ -69,6 +69,29 @@ docker-compose up --build
 
 3. O n8n estará disponível em `http://localhost:5678`
 
+### Acessando e Configurando o n8n (Primeira Execução)
+
+Ao iniciar os contêineres pela primeira vez, a instância do n8n estará vazia e precisará de uma configuração inicial única.
+
+**1. Crie sua Conta de Administrador Local**
+
+* Acesse o n8n em **`http://localhost:5678`**.
+* Você será apresentado a uma tela de "Setup new owner account".
+* Preencha com qualquer e-mail e senha de sua preferência (ex: `test@test.com` / `password`). Estes dados são apenas para o seu ambiente local e não serão compartilhados.
+* Conclua o setup inicial.
+
+**2. Importe os Workflows do Desafio**
+
+Após o login, sua interface do n8n estará vazia. Para carregar os workflows desenvolvidos neste desafio, siga os passos:
+
+* No menu principal do n8n, vá para **Workflows**.
+* Clique no botão **"Import from File..."**.
+* Selecione e importe os seguintes arquivos `.json` que estão neste repositório:
+    * `Workflow_ETL.json` (ou o nome que você deu ao seu workflow de migração).
+    * `Workflow_IA.json` (ou o nome que você deu ao seu workflow de IA).
+
+Após a importação, os workflows estarão visíveis e prontos para serem inspecionados e executados. Não se esqueça de ativá-los clicando no seletor "Inactive/Active" dentro de cada workflow.
+
 ### Exemplos de Uso
 **1. Consulta simples:**
 ```powershell
